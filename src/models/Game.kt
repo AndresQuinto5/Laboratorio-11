@@ -6,21 +6,21 @@ class Game<D>(val narrador: D, var radiantDeaths: Int, var direDeaths: Int, var 
     lateinit var direTeam: Team
 
     fun welcome(): String{
-        return narrateSomething(narrador, "welcome")
+        return narrateSomething(narrador, "Welcome back")
     }
     fun gameStart(): String{
-        return narrateSomething(narrador,"gameStart")
+        return narrateSomething(narrador,"Game Start")
     }
 
     fun killOccurred(isRadiant: Boolean): String{
         if (isRadiant){
             this.direTeam!!.heroes.removeAt(0)
-            this.radiantDeaths += 1 
+            this.radiantDeaths += 1
         } else {
             this.radiantTeam!!.heroes.removeAt(0)
             this.direDeaths += 1
         }
-        return narrateSomething(narrador, "killOccurred")
+        return narrateSomething(narrador, "kill Occurred")
     }
 
     fun multipleKillsOccurred(isRadiant: Boolean, numberOfKills:Int): String{
@@ -35,7 +35,7 @@ class Game<D>(val narrador: D, var radiantDeaths: Int, var direDeaths: Int, var 
             }
             this.direDeaths += numberOfKills
         }
-        return narrateSomething(narrador,"twoOrMoreKillsOccurred")
+        return narrateSomething(narrador,"Two or more kills occurred")
     }
 
     fun fiveKillsOccurred(isRadiant: Boolean) :String{
@@ -51,7 +51,7 @@ class Game<D>(val narrador: D, var radiantDeaths: Int, var direDeaths: Int, var 
             }
             this.direDeaths += 5
         }
-        return narrateSomething(narrador,"fiveKillsOccurred")
+        return narrateSomething(narrador,"five kills occurred PENTAKILL")
     }
 
     fun towerKilled(isRadiant: Boolean): String{
@@ -62,19 +62,19 @@ class Game<D>(val narrador: D, var radiantDeaths: Int, var direDeaths: Int, var 
             this.radiantTeam!!.towers.removeAt(0)
             this.direDeaths += 1
         }
-        return narrateSomething(narrador,"towerHasFallen")
+        return narrateSomething(narrador,"Tower has fallen")
     }
 
     fun ancientKilled(isRadiant: Boolean): String{
         if (isRadiant){
             this.radiantDeaths += 1
             this.winner = 0
-            return narrateSomething(narrador,"radiantWins")
+            return narrateSomething(narrador,"Radiant Wins!")
 
         }
         this.direDeaths += 1
         this.winner = 1
-        return narrateSomething(narrador,"direWins")
+        return narrateSomething(narrador,"Dire Wins! ")
 
     }
 
