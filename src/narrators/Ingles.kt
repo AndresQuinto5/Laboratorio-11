@@ -2,51 +2,51 @@ package narrators
 
 import models.Narrator
 
-class Español :Narrator {
-    //Creamos los dialogos del narrador cuando ocurran ciertas acciones
+class NarradorEnIngles:Narrator {
+//Narrador en ingles!
 
     override fun narrate(eventType: String): String {
 
         when (eventType) {
             "Welcome back" -> {
                 return """
-                    | ¡Bienvenidos a todos!
+                    | ¡Welcomeback everyone!
                 """.trimIndent()
             }
             "Game Start" -> {
                 return """
-                    | ¡Comienza el juego!
+                    | ¡The game has begun!
                 """.trimMargin()
             }
             "kill Occurred" -> {
                 return """
-                    | ¡Ha ocurrido una muerte!
+                    | ¡A kill has ocurred!
                 """.trimMargin()
             }
             "Two or more kills occurred" -> {
                 return """
-                    | ¡Multiples eliminaciones! Que Comienzen los bativergasos
+                    | ¡Multiple eliminations! the bativergasos had begun
                 """.trimMargin()
             }
             "five kills occurred PENTAKILL" -> {
                 return """
-                    | ¡¡¡5 muertes!!! IMPOSIBLE, 5 Heroes caidos ¡Que barbaridad de partida!
+                    | ¡¡¡5 eliminations!!! IMPOSIBLE, 5 Heroes had death ¡What a impressive match!
                     """.trimMargin()
             }
             "Tower has fallen" -> {
                 return """
-                    | ¡Una torre ha sido destruida!
+                    | ¡A tower has fallen!
                 """.trimMargin()
             }
             "Radiant Wins!" -> {
                 return """
-                    | ¡El equipo Radiant ha ganado!
+                    | ¡Team Radiant wins the match!
                 """.trimMargin()
             }
 
             "Dire Wins!" -> {
                 return """
-                    | ¡El equipo Dire ha ganado!
+                    | ¡Team Dire wins the match!
                 """.trimMargin()
             }
 

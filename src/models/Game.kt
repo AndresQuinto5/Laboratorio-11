@@ -74,7 +74,7 @@ class Game<D>(val narrador: D, var radiantDeaths: Int, var direDeaths: Int, var 
         }
         this.direDeaths += 1
         this.winner = 1
-        return narrateSomething(narrador,"Dire Wins! ")
+        return narrateSomething(narrador,"Dire Wins!")
 
     }
 
